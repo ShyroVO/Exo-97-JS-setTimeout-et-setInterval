@@ -12,6 +12,7 @@ let compteur = document.getElementById('interval-div');
 let variableChiffre = 0;
 let variableSoixante = 0;
 
+
 //Start:
 document.getElementById('interval-start').addEventListener('click', function(){
     setInterval( function (){
@@ -29,9 +30,8 @@ document.getElementById('interval-start').addEventListener('click', function(){
 
 //Stop
 document.getElementById('interval-stop').addEventListener('click', function (){
-
+    clearTimeout();
 })
-
 
 //    S'arrêter lors du clic sur le bouton #interval-stop.
 //Incrémenter une variable de 60 ( toutes les 60 secondes du coups )
