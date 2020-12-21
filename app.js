@@ -12,25 +12,25 @@ let compteur = document.getElementById('interval-div');
 let variableChiffre = 0;
 let variableSoixante = 0;
 
+function time () {
+    if (variableChiffre < 60) {
+        compteur.innerHTML = variableChiffre;
+        variableChiffre++;
+    } else if (variableChiffre === 60) {
+        variableChiffre = 0;
+        variableSoixante++;
+        document.getElementById('divMoche').innerHTML = variableSoixante;
+    }
+}
 
 //Start:
 document.getElementById('interval-start').addEventListener('click', function(){
-    setInterval( function (){
-        if (variableChiffre < 60) {
-            compteur.innerHTML = variableChiffre;
-            variableChiffre++;
-        }
-        else if (variableChiffre === 60){
-            variableChiffre = 0;
-            variableSoixante++;
-            document.getElementById('divMoche').innerHTML = variableSoixante;
-        }
-    }, 1000);
+    setInterval(time ,1000);
 });
 
 //Stop
 document.getElementById('interval-stop').addEventListener('click', function (){
-    clearTimeout();
+    clearTimeout(time);
 })
 
 //    S'arrêter lors du clic sur le bouton #interval-stop.
